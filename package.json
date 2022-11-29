@@ -11,7 +11,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
-    "element-plus": "^2.2.25",
+    "node-snackbar": "^0.1.16",
     "normalize.css": "^8.0.1",
     "pinia": "^2.0.26",
     "vue": "^3.2.45"

@@ -7,16 +7,14 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
-    HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
-    IconCommunity: typeof import('./src/components/icons/IconCommunity.vue')['default']
-    IconDocumentation: typeof import('./src/components/icons/IconDocumentation.vue')['default']
-    IconEcosystem: typeof import('./src/components/icons/IconEcosystem.vue')['default']
-    IconSupport: typeof import('./src/components/icons/IconSupport.vue')['default']
-    IconTooling: typeof import('./src/components/icons/IconTooling.vue')['default']
-    Main: typeof import('./src/components/Main.vue')['default']
+    AnzhiyuButton: typeof import('./src/components/anzhiyu-button.vue')['default']
+    Controller: typeof import('./src/components/controller.vue')['default']
+    Identification: typeof import('./src/components/identification.vue')['default']
+    MainContent: typeof import('./src/components/main-content.vue')['default']
     MainTop: typeof import('./src/components/main-top.vue')['default']
-    TheWelcome: typeof import('./src/components/TheWelcome.vue')['default']
-    WelcomeItem: typeof import('./src/components/WelcomeItem.vue')['default']
+    Tip: typeof import('./src/components/tip.vue')['default']
+    VarButton: typeof import('@varlet/ui')['_ButtonComponent']
+    VarIcon: typeof import('@varlet/ui')['_IconComponent']
+    Wind: typeof import('./src/components/wind.vue')['default']
   }
 }
