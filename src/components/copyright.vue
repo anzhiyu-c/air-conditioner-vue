@@ -3,7 +3,7 @@
  * @Author: 安知鱼
  * @Email: anzhiyu-c@qq.com
  * @Date: 2022-11-29 21:42:28
- * @LastEditTime: 2022-11-30 08:55:22
+ * @LastEditTime: 2022-11-30 10:27:17
  * @LastEditors: 安知鱼
 -->
 
@@ -39,7 +39,7 @@ import * as pkg from "../../package.json";
     margin: 0.5rem;
     &-1 {
       display: inline-flex;
-      color: #0078e7;
+      color: #0078e7 !important;
       &-icon {
         margin-left: 0.25rem;
         margin-right: 0.25rem;

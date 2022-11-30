@@ -3,7 +3,7 @@
  * @Author: 安知鱼
  * @Email: anzhiyu-c@qq.com
  * @Date: 2022-11-29 20:13:49
- * @LastEditTime: 2022-11-29 21:41:12
+ * @LastEditTime: 2022-11-30 10:27:00
  * @LastEditors: 安知鱼
 -->
 <template>
@@ -59,7 +59,7 @@ const props = defineProps({
   min-width: 0px;
   width: 56px;
   height: 56px;
-  z-index: 99;
+  z-index: 2;
   box-shadow: rgb(0 0 0 / 20%) 0px 3px 5px -1px, rgb(0 0 0 / 14%) 0px 6px 10px 0px, rgb(0 0 0 / 12%) 0px 1px 18px 0px;
   color: rgba(0, 0, 0, 0.87);
   background-color: rgb(224, 224, 224);
