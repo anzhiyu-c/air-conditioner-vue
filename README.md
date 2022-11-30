@@ -1,46 +1,80 @@
-# air-conditinoner-vue
+<h1 align="center">
+Air Conditioner Vue
+</h1>
 
-This template should help get you started developing with Vue 3 in Vite.
+<p align="center">
+<a href="https://github.com/YunYouJun/air-conditioner/actions" target="_blank">
+<img src="https://img.shields.io/badge/Github-passing-d021d6?style=flat&logo=GitHub" alt="GitHub Pages" />
+</a>
+</p>
 
-## Recommended IDE Setup
+<p align="center">
+中文文档 | <a href="./README.en.md">English Docs</a>
+</p>
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+<p align="center">
+云空调，便携小空调，为你的夏日带去清凉！
+</p>
+<br>
 
-## Type Support for `.vue` Imports in TS
+该项目创意来自 [云游君](https://www.yunyoujun.cn/), 使用 VUE3 + VITE + TS 构建, 未使用任何 UI 框架，无多余样式资源，打包后仅 84kb。
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+> [云空调，便携小空调，#VUE3 #VITE #TS ｜安知鱼](https://anzhiy.cn/air-conditioner/)
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+- 裸机[main]：[https://loquacious-bienenstitch-58539b.netlify.app/n](https://loquacious-bienenstitch-58539b.netlify.app/)
+- 样板房：<https://anzhiy.cn/air-conditioner/>
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+## Features
 
-## Customize configuration
+### 优势
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- 🕐 随时随地打开空调
+- 📱 便携
+- 🔋 低功耗（使用 HTML CSS 而非 Canvas 绘制）
+- 🔊 静音
+- 🎮 操作简单
+- 🔧 安装便捷
 
-## Project Setup
+### 劣势
 
-```sh
-npm install
+- 💨 没有风
+
+## 安装
+
+### iframe
+
+```html
+<iframe height="740" src="https://loquacious-bienenstitch-58539b.netlify.app/"></iframe>
 ```
 
-### Compile and Hot-Reload for Development
+您可以快速为您的网站安装空调。
 
-```sh
+样板房：[空调房](https://anzhiy.cn/air-conditioner/)
+
+## Dev
+
+```bash
+# 开发预览
 npm run dev
-```
 
-### Type-Check, Compile and Minify for Production
-
-```sh
+# 构建项目
 npm run build
+# ./build
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+## Todo
 
-```sh
-npm run lint
-```
+- [x] 空调
+  - [x] 能耗标签
+  - [x] 温度范围（16-31˚C）
+  - [x] 风 css
+  - [x] 音效
+    - [x] 按钮
+    - [x] 工作声
+    - [ ] 接入 [喜马拉雅](https://m.ximalaya.com/sleepaudio/6?mixedTrackIds=331526646&utm_source=smxkt) 更多音效
+- [x] 适应系统的亮暗模式
+
+## Ref
+
+- 数字字体: [Digital 7](https://www.dafont.com/digital-7.font)，Free for personal use
+- 空调工作声: [Air Extractor Fan | freesound](https://freesound.org/people/InspectorJ/sounds/403664/)
