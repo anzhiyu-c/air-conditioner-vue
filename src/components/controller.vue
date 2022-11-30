@@ -3,12 +3,12 @@
  * @Author: 安知鱼
  * @Email: anzhiyu-c@qq.com
  * @Date: 2022-11-29 15:21:38
- * @LastEditTime: 2022-11-29 20:48:18
+ * @LastEditTime: 2022-11-30 09:05:28
  * @LastEditors: 安知鱼
 -->
 <script lang="ts" setup>
 import AnzhiyuButton from "@/components/anzhiyu-button.vue";
-import { getAssetURL } from "@/utils/load_assets";
+// import { getAssetURL } from "@/utils/load_assets";
 import useHomeStore from "@/stores/modules/home";
 import { storeToRefs } from "pinia";
 
@@ -79,9 +79,13 @@ function toggleAC(status: boolean) {
   }
 }
 
-const SOUND_DI_PATH = getAssetURL("audio/di.m4a");
-const SOUND_AC_WORK_PATH = getAssetURL("audio/ac-work.m4a");
-const SOUND_AIR_EXTRACTOR_FAN_PATH = getAssetURL("audio/air-extractor-fan.m4a");
+// const SOUND_DI_PATH = getAssetURL("audio/di.m4a");
+// const SOUND_AC_WORK_PATH = getAssetURL("audio/ac-work.m4a");
+// const SOUND_AIR_EXTRACTOR_FAN_PATH = getAssetURL("audio/air-extractor-fan.m4a");
+const SOUND_DI_PATH = "https://alist.anzhiy.cn/d/anzhiyu/air-conditioner-dev/public/assets/audio/di.m4a";
+const SOUND_AC_WORK_PATH = "https://alist.anzhiy.cn/d/anzhiyu/air-conditioner-dev/public/assets/audio/ac-work.m4a";
+const SOUND_AIR_EXTRACTOR_FAN_PATH =
+  "https://alist.anzhiy.cn/d/anzhiyu/air-conditioner-dev/public/assets/audio/air-extractor-fan.m4a";
 </script>
 
 <template>
@@ -94,14 +98,14 @@ const SOUND_AIR_EXTRACTOR_FAN_PATH = getAssetURL("audio/air-extractor-fan.m4a");
         type="primary"
         round
         size="large"
-        class="cold-btn"
+        class="clod-btn"
         @click="
           playDi();
           homeStore.changeMode('clod');
         "
       >
         <template #default>
-          <div class="cold-icon"></div>
+          <div class="clod-icon"></div>
         </template>
       </AnzhiyuButton>
 
@@ -109,7 +113,7 @@ const SOUND_AIR_EXTRACTOR_FAN_PATH = getAssetURL("audio/air-extractor-fan.m4a");
         :type="status ? 'danger' : 'success'"
         round
         size="large"
-        class="cold-btn"
+        class="clod-btn"
         @click="
           playDi();
           toggleAC(status);
@@ -125,7 +129,7 @@ const SOUND_AIR_EXTRACTOR_FAN_PATH = getAssetURL("audio/air-extractor-fan.m4a");
         type="warning"
         round
         size="large"
-        class="cold-btn"
+        class="clod-btn"
         @click="
           playDi();
           homeStore.changeMode('hot');
@@ -139,7 +143,7 @@ const SOUND_AIR_EXTRACTOR_FAN_PATH = getAssetURL("audio/air-extractor-fan.m4a");
     <AnzhiyuButton
       round
       size="large"
-      class="cold-btn"
+      class="clod-btn"
       @click="
         playDi();
         homeStore.addTemperature();
@@ -152,7 +156,7 @@ const SOUND_AIR_EXTRACTOR_FAN_PATH = getAssetURL("audio/air-extractor-fan.m4a");
     <AnzhiyuButton
       round
       size="large"
-      class="cold-btn"
+      class="clod-btn"
       @click="
         playDi();
         homeStore.subTemperature();
@@ -180,11 +184,11 @@ const SOUND_AIR_EXTRACTOR_FAN_PATH = getAssetURL("audio/air-extractor-fan.m4a");
     height: 2em;
   }
 
-  .cold-btn {
+  .clod-btn {
     width: 56px;
     height: 56px;
     margin: 8px;
-    .cold-icon {
+    .clod-icon {
       --un-icon: url("data:image/svg+xml;utf8,%3Csvg viewBox='0 0 24 24' width='1.2em' height='1.2em' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath fill='currentColor' d='M21 11h-3.17l2.54-2.54a.996.996 0 0 0 0-1.41c-.39-.39-1.03-.39-1.42 0L15 11h-2V9l3.95-3.95c.39-.39.39-1.03 0-1.42a.996.996 0 0 0-1.41 0L13 6.17V3c0-.55-.45-1-1-1s-1 .45-1 1v3.17L8.46 3.63a.996.996 0 0 0-1.41 0c-.39.39-.39 1.03 0 1.42L11 9v2H9L5.05 7.05c-.39-.39-1.03-.39-1.42 0a.996.996 0 0 0 0 1.41L6.17 11H3c-.55 0-1 .45-1 1s.45 1 1 1h3.17l-2.54 2.54a.996.996 0 0 0 0 1.41c.39.39 1.03.39 1.42 0L9 13h2v2l-3.95 3.95c-.39.39-.39 1.03 0 1.42c.39.39 1.02.39 1.41 0L11 17.83V21c0 .55.45 1 1 1s1-.45 1-1v-3.17l2.54 2.54c.39.39 1.02.39 1.41 0c.39-.39.39-1.03 0-1.42L13 15v-2h2l3.95 3.95c.39.39 1.03.39 1.42 0a.996.996 0 0 0 0-1.41L17.83 13H21c.55 0 1-.45 1-1s-.45-1-1-1z'/%3E%3C/svg%3E");
       @extend .air-conditioner-controller-icon;
     }

@@ -3,11 +3,12 @@
  * @Author: 安知鱼
  * @Email: anzhiyu-c@qq.com
  * @Date: 2022-10-31 17:42:11
- * @LastEditTime: 2022-11-29 21:12:23
+ * @LastEditTime: 2022-11-30 09:05:09
  * @LastEditors: 安知鱼
  */
 import { defineStore } from "pinia";
 import Snackbar from "node-snackbar";
+type AcMode = "clod" | "hot";
 const useHomeStore = defineStore("home", {
   state: () => ({
     authorInfo: {
@@ -36,8 +37,35 @@ const useHomeStore = defineStore("home", {
     /**
      * 修改空调工作模式
      */
-    changeMode(mode: string) {
+    changeMode(mode: AcMode) {
       this.mode = mode;
+
+      const currentTemperature = this.temperature;
+      const goodClodTemperature = 26;
+      const goodHotTemperature = 20;
+
+      const recommendedSlogan = (mode: AcMode, temperature: number) =>
+        `建议将空调的制${mode === "clod" ? "冷" : "热"}温度调至 ${temperature} 度以${
+          mode === "clod" ? "上" : "下"
+        }，为节能减排贡献一份力量！`;
+
+      if (mode === "clod" && currentTemperature < goodClodTemperature) {
+        Snackbar.show({
+          text: recommendedSlogan("clod", goodClodTemperature),
+          backgroundColor: "#ffc107",
+          duration: 2000,
+          pos: "top-center",
+          showAction: false,
+        });
+      } else if (mode === "hot" && currentTemperature > goodHotTemperature) {
+        Snackbar.show({
+          text: recommendedSlogan("hot", goodHotTemperature),
+          backgroundColor: "#ffc107",
+          duration: 2000,
+          pos: "top-center",
+          showAction: false,
+        });
+      }
     },
     /**
      * 增加空调温度

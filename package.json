@@ -1,7 +1,17 @@
 {
+  "description": "云空调，便携小空调VUE3",
   "name": "air-conditinoner-vue",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
+  "packageManager": "npm@8.18.0",
+  "author": {
+    "url": "https://anzhiy.cn",
+    "email": "chen@anzhiy.cn",
+    "name": "anzhiyu"
+  },
+  "repository": {
+    "url": "https://github.com/anzhiyu-c/air-conditioner-vue"
+  },
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check build-only",

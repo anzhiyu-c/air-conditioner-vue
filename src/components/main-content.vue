@@ -3,7 +3,7 @@
  * @Author: 安知鱼
  * @Email: anzhiyu-c@qq.com
  * @Date: 2022-11-29 13:43:16
- * @LastEditTime: 2022-11-29 19:56:02
+ * @LastEditTime: 2022-11-29 21:35:06
  * @LastEditors: 安知鱼
 -->
 <template>
@@ -22,7 +22,11 @@
       </div>
     </div>
     <div class="air-conditioner-main-content-bottom">
-      <img src="@/assets/images/yun-logo.svg" alt="logo" class="air-conditioner-main-content-bottom-logo" />
+      <img
+        src="https://alist.anzhiy.cn/d/anzhiyu/air-conditioner-dev/public/yun-logo.svg"
+        alt="logo"
+        class="air-conditioner-main-content-bottom-logo"
+      />
       <div class="air-conditioner-main-content-bottom-dividing" />
       <div
         class="air-conditioner-main-content-bottom-dot"
