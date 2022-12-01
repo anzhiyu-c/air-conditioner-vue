@@ -3,7 +3,7 @@
  * @Author: 安知鱼
  * @Email: anzhiyu-c@qq.com
  * @Date: 2022-11-29 15:21:38
- * @LastEditTime: 2022-11-30 09:05:28
+ * @LastEditTime: 2022-12-01 08:54:34
  * @LastEditors: 安知鱼
 -->
 <script lang="ts" setup>
@@ -36,6 +36,7 @@ function playStartSound() {
   acStart.play();
 
   playStartSoundTimeoutId = setTimeout(() => {
+    acStart.pause();
     playWorkSound();
   }, 8000);
 }
@@ -64,6 +65,8 @@ function playWorkSound() {
  * 切换空调工作状态
  */
 function toggleAC(status: boolean) {
+  console.log(status);
+
   if (status) {
     (document.getElementById("ac-work") as HTMLAudioElement).load();
     const acWork = document.getElementById("air-extractor-fan") as HTMLAudioElement;
@@ -73,10 +76,13 @@ function toggleAC(status: boolean) {
 
     if (playWorkSoundIntervalId) clearInterval(playWorkSoundIntervalId);
 
-    acWork.currentTime = noiseStartTime + noiseDuration;
+    // acWork.currentTime = noiseStartTime + noiseDuration;
+
+    acWork.currentTime = acWork.duration - 2;
   } else {
     playStartSound();
   }
+  homeStore.changeStatus();
 }
 
 // const SOUND_DI_PATH = getAssetURL("audio/di.m4a");
@@ -86,13 +92,30 @@ const SOUND_DI_PATH = "https://alist.anzhiy.cn/d/anzhiyu/air-conditioner-dev/pub
 const SOUND_AC_WORK_PATH = "https://alist.anzhiy.cn/d/anzhiyu/air-conditioner-dev/public/assets/audio/ac-work.m4a";
 const SOUND_AIR_EXTRACTOR_FAN_PATH =
   "https://alist.anzhiy.cn/d/anzhiyu/air-conditioner-dev/public/assets/audio/air-extractor-fan.m4a";
+const SOUND_DI_PATH_MP3 = "https://alist.anzhiy.cn/d/anzhiyu/air-conditioner-dev/public/assets/audio/di.mp3";
+const SOUND_AC_WORK_PATH_MP3 = "https://alist.anzhiy.cn/d/anzhiyu/air-conditioner-dev/public/assets/audio/ac-work.mp3";
+const SOUND_AIR_EXTRACTOR_FAN_PATH_MP3 =
+  "https://alist.anzhiy.cn/d/anzhiyu/air-conditioner-dev/public/assets/audio/air-extractor-fan.mp3";
 </script>
 
 <template>
   <div class="air-conditioner-controller">
-    <audio id="di" :src="SOUND_DI_PATH" preload="auto"></audio>
-    <audio id="ac-work" :src="SOUND_AC_WORK_PATH" preload="auto"></audio>
-    <audio id="air-extractor-fan" :src="SOUND_AIR_EXTRACTOR_FAN_PATH" preload="auto"></audio>
+    <audio id="di">
+      <source :src="SOUND_DI_PATH" preload="auto" />
+      <source :src="SOUND_DI_PATH_MP3" type="audio/mpeg" preload="auto" />
+      您的浏览器不支持audio标记（元素）
+    </audio>
+    <audio id="ac-work">
+      <source :src="SOUND_AC_WORK_PATH" preload="auto" />
+      <source :src="SOUND_AC_WORK_PATH_MP3" type="audio/mpeg" preload="auto" />
+      您的浏览器不支持audio标记（元素）
+    </audio>
+    <audio id="air-extractor-fan">
+      <source :src="SOUND_AIR_EXTRACTOR_FAN_PATH" preload="auto" />
+      <source :src="SOUND_AIR_EXTRACTOR_FAN_PATH_MP3" type="audio/mpeg" preload="auto" />
+      您的浏览器不支持audio标记（元素）
+    </audio>
+
     <div>
       <AnzhiyuButton
         type="primary"
@@ -117,7 +140,6 @@ const SOUND_AIR_EXTRACTOR_FAN_PATH =
         @click="
           playDi();
           toggleAC(status);
-          homeStore.changeStatus();
         "
       >
         <template #default>
