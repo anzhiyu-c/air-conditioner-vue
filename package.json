@@ -13,7 +13,7 @@
     "url": "https://github.com/anzhiyu-c/air-conditioner-vue"
   },
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host 0.0.0.0",
     "build": "run-p type-check build-only",
     "preview": "vite preview",
     "build-only": "vite build",

@@ -3,7 +3,7 @@
  * @Author: 安知鱼
  * @Email: anzhiyu-c@qq.com
  * @Date: 2022-11-29 15:21:38
- * @LastEditTime: 2022-12-01 08:54:34
+ * @LastEditTime: 2022-12-01 09:31:36
  * @LastEditors: 安知鱼
 -->
 <script lang="ts" setup>
@@ -35,8 +35,10 @@ function playStartSound() {
   acStart.load();
   acStart.play();
 
+  const acWork = document.getElementById("air-extractor-fan") as HTMLAudioElement;
+  acWork.load();
+  acWork.pause();
   playStartSoundTimeoutId = setTimeout(() => {
-    acStart.pause();
     playWorkSound();
   }, 8000);
 }
@@ -65,6 +67,7 @@ function playWorkSound() {
  * 切换空调工作状态
  */
 function toggleAC(status: boolean) {
+  playDi();
   console.log(status);
 
   if (status) {
@@ -137,10 +140,7 @@ const SOUND_AIR_EXTRACTOR_FAN_PATH_MP3 =
         round
         size="large"
         class="clod-btn"
-        @click="
-          playDi();
-          toggleAC(status);
-        "
+        @click="toggleAC(status)"
       >
         <template #default>
           <div class="seting-icon"></div>
