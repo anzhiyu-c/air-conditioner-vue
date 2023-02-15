@@ -3,7 +3,7 @@
  * @Author: 安知鱼
  * @Email: anzhiyu-c@qq.com
  * @Date: 2022-11-29 15:21:38
- * @LastEditTime: 2022-12-01 09:31:36
+ * @LastEditTime: 2023-02-15 11:05:20
  * @LastEditors: 安知鱼
 -->
 <script lang="ts" setup>
@@ -91,14 +91,14 @@ function toggleAC(status: boolean) {
 // const SOUND_DI_PATH = getAssetURL("audio/di.m4a");
 // const SOUND_AC_WORK_PATH = getAssetURL("audio/ac-work.m4a");
 // const SOUND_AIR_EXTRACTOR_FAN_PATH = getAssetURL("audio/air-extractor-fan.m4a");
-const SOUND_DI_PATH = "https://alist.anzhiy.cn/d/anzhiyu/air-conditioner-dev/public/assets/audio/di.m4a";
-const SOUND_AC_WORK_PATH = "https://alist.anzhiy.cn/d/anzhiyu/air-conditioner-dev/public/assets/audio/ac-work.m4a";
+const SOUND_DI_PATH = "https://npm.elemecdn.com/anzhiyu-air-conditioner@1.0.0/di.m4a";
+const SOUND_AC_WORK_PATH = "https://npm.elemecdn.com/anzhiyu-air-conditioner@1.0.0/ac-work.m4a";
 const SOUND_AIR_EXTRACTOR_FAN_PATH =
-  "https://alist.anzhiy.cn/d/anzhiyu/air-conditioner-dev/public/assets/audio/air-extractor-fan.m4a";
-const SOUND_DI_PATH_MP3 = "https://alist.anzhiy.cn/d/anzhiyu/air-conditioner-dev/public/assets/audio/di.mp3";
-const SOUND_AC_WORK_PATH_MP3 = "https://alist.anzhiy.cn/d/anzhiyu/air-conditioner-dev/public/assets/audio/ac-work.mp3";
+  "https://npm.elemecdn.com/anzhiyu-air-conditioner@1.0.0/air-extractor-fan.m4a";
+const SOUND_DI_PATH_MP3 = "https://npm.elemecdn.com/anzhiyu-air-conditioner@1.0.0/di.mp3";
+const SOUND_AC_WORK_PATH_MP3 = "https://npm.elemecdn.com/anzhiyu-air-conditioner@1.0.0/ac-work.mp3";
 const SOUND_AIR_EXTRACTOR_FAN_PATH_MP3 =
-  "https://alist.anzhiy.cn/d/anzhiyu/air-conditioner-dev/public/assets/audio/air-extractor-fan.mp3";
+  "https://npm.elemecdn.com/anzhiyu-air-conditioner@1.0.0/air-extractor-fan.mp3";
 </script>
 
 <template>
